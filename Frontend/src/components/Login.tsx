@@ -18,7 +18,7 @@ export default function Login(){
         e.preventDefault()
         // vamos verificar se usuário e senha estão corretos
         // vamos conectar assincronamente no backend no endpoint /users?username=xxx
-        const resp = await fetch(`http://localhost:3000/users?username=${username}`, {
+        const resp = await fetch(`http://localhost:3333/tb_usuario/${username}`, {
             method: 'GET'
             })
             .then (resposta => {
@@ -26,12 +26,12 @@ export default function Login(){
             })
         console.log(resp)
         if (resp.length === 0) {
-            alert('Usuário / senha incorretos ')
+            alert('Usuário / senha incorretos')
         }
         else {
             // usuário encontrado
             // vamos verificar se a senha está correta
-            if (resp[0].password !== password) {
+            if (resp[0].senha !== password) {
                 alert('Usuário / senha incorretos')
             }
             else {
