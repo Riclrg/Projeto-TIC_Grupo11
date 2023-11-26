@@ -24,7 +24,7 @@ export function Item() {
   //Vetor de itens
   const [tb_item, setItens] = useState<ItemProps[]>([]);
 
-  //Cariáveis de estado para os campos do formulário
+  //Variáveis de estado para os campos do formulário
   const [cod_item, setCod] = useState("");
   const [nm_item, setName] = useState("");
   const [des_item, setDescription] = useState("");

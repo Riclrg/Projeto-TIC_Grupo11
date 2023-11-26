@@ -1,4 +1,4 @@
-import Fornecedor from './components/Fornecedor'
+import { Fornecedor } from './components/Fornecedor'
 import Login from './components/Login'
 import { Local } from './components/Local'
 import { Item } from './components/Item'

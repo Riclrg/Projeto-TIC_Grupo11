@@ -268,11 +268,15 @@ export async function AppRoutes(server: FastifyInstance) {
     })
     //ROTA PARA ATUALIZAR UMA SALA NA TB_SALA
     server.put('/tb_sala/update', async (Request) => {
+        const idParams = z.object({
+            id_sala: z.number()
+        })
+        const {id_sala} = idParams.parse(Request.params)
         const putBody = z.object({
             id_sala: z.number(),
             nm_sala: z.string(),
         })
-        const {id_sala, nm_sala} = putBody.parse(Request.body)
+        const {nm_sala} = putBody.parse(Request.body)
         const updateSala = await prisma.tb_sala.updateMany({
             where: {
                 id_sala: id_sala,

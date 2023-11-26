@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import COVER_IMAGE from '/imagem.jpg'
 
 //Tela de login
 export default function Login(){
@@ -41,47 +40,41 @@ export default function Login(){
             }
         }
     }
-    const colors = {
-        primary:"#060606",
-        background: "#f5f5f5",
-        disabled: "#D9D9D9"
-    }
-    
+
     return (
-
-        <div className="flex items-center justify-center h-screen w-screen ">
-            <div className="w-full h-screen flex items-start">
-                <div className='absolute top-[0%] left[10%] flex flex-col'></div>
-                <img src={COVER_IMAGE} className="w=full h-full objetct-cover"/>
-            </div>
-
-            <div className="w-1/2 h-full bg-[#f5f5f5] flex flex-col p-10 justify-around">
-
-                
-                <form onSubmit={handleLogin}>
-                    <div className="mb-4">
-                        <label className="block text-black mb-2 font-semibold" htmlFor="username">
-                            Username
-                        </label>
-                        <input type="text" id="username" value={username}
-                            onChange={e => setUsername(e.target.value)}
-                            className="w-full bg-transparent text-black py-2 my-1 border-b border-black outline-none focus:outline-none" />
+        <div className="min-h-screen bg-white flex">
+                <div className="flex h-full justify-center items-center box-content">
+                    <img src="imagem.jpg" alt="" className="w=full h-full objetct-cover "/>
+                </div> 
+            <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+                <div className="mx-auto w-full max-w-sm lg:w-80">
+                    <div className="mt-6">
+                        <form onSubmit={handleLogin}>
+                            <div className="mb-4">
+                                <label className="mt-6 text-black font-semibold" htmlFor="username">
+                                    Usuário
+                                </label>
+                                <input type="text" id="username" value={username}
+                                    onChange={e => setUsername(e.target.value)}
+                                    className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus: outline-none" />
+                            </div>
+                            <div className="mb-4">
+                                <label className="mt-6 text-black font-semibold" htmlFor="password">
+                                    Senha
+                                </label>
+                                <input type="password" id="password" value={password}
+                                    onChange={e => setPassword(e.target.value)}
+                                    className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus: outline-none" />
+                            </div>
+                            <div className="mb-4">
+                                <button type="submit" 
+                                    className="inline-block w-full py-4 px-8 leading-none text-white bg-black hover:bg-gray-800 font-semibold rounded shadow">
+                                        Entrar
+                                </button>
+                            </div>
+                        </form>
                     </div>
-
-                    <div className="mb-5">
-                        <label className="block text-black mb-2 font-semibold" htmlFor="password">
-                            Password
-                        </label>
-                        <input type="password" id="password" value={password}
-                            onChange={e => setPassword(e.target.value)}
-                            className="w-full bg-transparent text-black py-2 my-1 border-b border-black outline-none focus:outline-none" />
-                    </div>
-                    <button 
-                        type="submit" 
-                        className="w-full text-white bg-[#060606] rounded-md p-4 text-center flex-items-center justify-center">
-                            Login
-                    </button>
-                </form>
+                </div>
             </div>
        </div>
     )
